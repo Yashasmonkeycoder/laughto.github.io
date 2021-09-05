@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html >
+  <head >
+    <style >
+      body{
+        background-color: white;
+        border: solid black 20px;
+        border-width: 100%;
+      }
+      #front{
+        position:fixed;
+        left: 12%;
+        top:35%;
+        font-size: 50px;
+        transform: rotate(90deg);
+      }
+      #last{
+        display: none;
+        position:fixed;
+        left: 12%;
+        top:35%;
+        font-size: 50px;
+        transform: rotate(90deg);
+        border:solid black 3px;
+        border-radius: 50px;
+        background-color: aqua;
+      }
+      #vedioone{
+        display: none;
+        transform: rotate(90deg);
+        width:800px;
+        height:500px;
+        position: fixed;
+        left:25%;
+        top:35%;
+        border:solid black 8px;
+        border-radius: 40px;
+      }
+      #vediotwo,#vediothree,#vediofour,#vediofive{
+        display:none;
+        transform: rotate(90deg);
+        width:800px;
+        height:500px;
+        position: fixed;
+        left:25%;
+        top:35%;
+        border: solid black 8px;
+        border-radius:40px;
+      }
+      #playzo{
+        width:350px;
+        height: 120px;
+        transform: rotate(90deg);
+        border-radius: 100px;
+        background-color: lime;
+        color: white;
+        font-size: 40px;
+        position:fixed;
+        left:6%;
+        top:75%;
+      }
+      #playon,#playto,#playth,#playfo,#playff{
+        display: none;
+        width:350px;
+        height: 120px;
+        transform: rotate(90deg);
+        border-radius: 100px;
+        background-color: aqua;
+        color: black;
+        font-size: 40px;
+        position:fixed;
+        left:6%;
+        top:75%;
+      }
+      #playlan{
+         width:350px;
+        height: 120px;
+        border-radius: 100px;
+        background-color: white;
+        color: black;
+        font-size: 40px;
+        position:fixed;
+        left:100%;
+        top:30%;
+      }
+      #playlay{
+        width:350px;
+        height: 120px;
+        border-radius: 100px;
+        background-color: lime;
+        color: black;
+        font-size: 40px;
+        position:fixed;
+        left:100%;
+        top:80%;
+      }
+    </style>
+  </head>
+  <body >
+    <div id="front" >
+      <h2 >Ready to laugh aloud ?</h2></br></br>
+      <p >-inspired by ksi made by yashas slk</p>
+     
+    </div>
+        <button onclick="playzo()" id="playzo">Next--></button>
+    <video onended="finnish()" id="vedioone" src="First.mp4" controls>This is not supported</video>
+      <video onended="finnish()" id="vediotwo" src="Second.mp4" controls>This is not supported</video>
+        <video onended="finnish()" id="vediothree" src="Third.mp4" controls>This is not supported</video>
+        <video onended="finnish()" id="vediofour" src="Forth.mp4" controls>This is not supported</video>
+        <video onended="finnish()" id="vediofive" src="Fifth.mp4" controls>This is not supported</video>
+      <button onended="finnish()" onclick="playon()" id="playon">Next--></button>
+         <button onclick="playto()" id="playto">Next--></button>
+            <button onclick="playth()" id="playth">Next--></button>
+               <button onclick="playfo()" id="playfo">Next--></button>
+                  <button onclick="playff()" id="playff">Next--></button>
+                  <div id="last" >
+                    <h2 >Want replay?</h2>
+                       <button onclick="playlan()" id="playlan">No</button>
+                       <button onclick="playlay()" id="playlay">Yes</button>
+                  </div>
+  </body>
+</html>
+<script>
+  function playzo(){
+    document.getElementsByTagName("body"). backgroundColor="white"
+    document.getElementById("front").style.display="none"
+    document.getElementById("vedioone").style.display="block"
+    document.getElementById("vedioone").webkitEnterFullscreen()
+    document.getElementById("vedioone").play()
+    document.getElementById("playon").style.display="block"
+    document.getElementById("playzo").style.display="none"
+  }
+  function playon(){
+    document.getElementById("vedioone").pause()
+    document.getElementById("vedioone").style.display="none"
+    document.getElementById("vediotwo").style.display="block"
+    document.getElementById("vediotwo").webkitEnterFullscreen()
+    document.getElementById("vediotwo").play()
+    document.getElementById("playto").style.display="block"
+    document.getElementById("playon").style.display="none"
+  }
+  function playto(){
+    document.getElementById("vediotwo").pause()
+    document.getElementById("vediotwo").style.display="none"
+    document.getElementById("vediothree").style.display="block"
+    document.getElementById("vediothree").webkitEnterFullscreen()
+    document.getElementById("vediothree").play()
+    document.getElementById("playth").style.display="block"
+    document.getElementById("playto").style.display="none"
+  }
+  function playth(){
+    document.getElementById("vediothree").pause()
+    document.getElementById("vediothree").style.display="none"
+    document.getElementById("vediofour").style.display="block"
+    document.getElementById("vediofour").webkitEnterFullscreen()
+    document.getElementById("vediofour").play()
+    document.getElementById("playfo").style.display="block"
+    document.getElementById("playth").style.display="none"
+  }
+  function playfo(){
+    document.getElementById("vediofour").pause()
+    document.getElementById("vediofour").style.display="none"
+    document.getElementById("vediofive").style.display="block"
+    document.getElementById("vediofive").webkitEnterFullscreen()
+    document.getElementById("vediofive").play()
+    document.getElementById("playff").style.display="block"
+    document.getElementById("playfo").style.display="none"
+  }
+  function playff(){
+    document.getElementById("vediofive").pause()
+    document.getElementById("vediofive").style.display="none"
+    document.getElementById("last").style.display="block"
+    document.getElementById("playff").style.display="none"
+  }
+  function finnish(){
+    document.getElementById("vedioone").webkitExitFullScreen()
+    document.getElementById("vediotwo").webkitExitFullScreen()
+    document.getElementById("vediothree").webkitExitFullScreen()
+    document.getElementById("vediofour").webkitExitFullScreen()
+    document.getElementById("vediofive").webkitExitFullScreen()
+  }
+  function playlan(){
+    document.getElementById("last").style.display="none"
+    setTimeout(function playlan(){
+      window.close()
+    },10000)
+  }
+  function playlay(){
+    location.reload()
+  }
+</script>
